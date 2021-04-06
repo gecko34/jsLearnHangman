@@ -1,0 +1,659 @@
+
+/** { background-color: rgba(255,0,0,.2); }
+* * { background-color: rgba(0,255,0,.2); }
+* * * { background-color: rgba(0,0,255,.2); }
+* * * * { background-color: rgba(255,0,255,.2); }
+* * * * * { background-color: rgba(0,255,255,.2); }
+* * * * * * { background-color: rgba(255,255,0,.2); }
+* * * * * * * { background-color: rgba(255,0,0,.2); }
+* * * * * * * * { background-color: rgba(0,255,0,.2); }
+* * * * * * * * * { background-color: rgba(0,0,255,.2); }*/
+
+
+@font-face {
+    font-family: 'AmaticSC';
+    src: url('fonts/AmaticSC-Bold.ttf') format('truetype');
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'AmaticSC';
+    src: url('fonts/AmaticSC-Regular.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neucha';
+    src: url('fonts/Neucha-Regular.ttf') format('truetype');
+}
+
+body {
+	background: url(images/manoir01.jpg) no-repeat center center fixed;
+ 	background-color: #ffffff;
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+ 	height:100vh;
+ 	margin:0;
+ 	padding:10px;
+ 	font-family: Abel, Arial, Helvetica, sans-serif;
+}
+
+
+/* =====================================================
+					Textes
+===================================================== */
+
+h1 {
+	font-family: AmaticSC;
+	font-weight: bold;
+	color : #ebeacb;
+	font-size: 6em;
+}
+
+
+.winGame {
+	font-family: AmaticSC;
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.winGameScore {
+	font-family: AmaticSC;
+	font-weight: bold;
+	font-size: 1.5em;
+	color : #ef6f06;
+}
+
+.playerName {
+	font-family: AmaticSC;
+	font-weight: bold;
+	font-size: 1.0em;
+	color : #8a1e1a;
+}
+
+
+.greenParties {
+	font-family: AmaticSC;
+	font-weight: bold;
+	font-size: 1em;
+	color : #56ae61;
+}
+
+.orangesParties {
+	font-family: AmaticSC;
+	font-weight: bold;
+	font-size: 1em;
+	color : #ea6002;
+}
+
+
+/* =====================================================
+			Habillage cadres du jeu
+===================================================== */
+
+.contenaireGeneral {
+	display: flex;
+	width: 100%;
+	text-align: center;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+
+
+/* ------ Cadre titre --------- */
+/* ---------------------------- */
+
+
+.contenaireTitre {
+	width: 100%;
+	text-align: center;
+	display:flex;
+	justify-content: space-between;
+}
+
+.infosPlayers {
+	font-family: AmaticSC;
+	font-weight: bold;
+	color : #8a1e1a;
+	font-size: 1.3em;
+	background-color: rgba(0, 0, 0, 0.3);
+	padding-right: 10px 50px 10px 10px;
+	width:15%;
+	border-radius: 20px;
+}
+
+
+.alertPlayer {
+	font-family: AmaticSC;
+	font-weight: bold;
+	color : #ebeacb;
+	font-size: 1.5em;
+	background-color: rgba(0, 0, 0, 0.3);
+	width:350px;
+	text-align: center;
+	border-radius: 10px;
+	padding: 8px;
+}
+
+
+
+/* --- Départ jeu : bontons choix --- */
+/* ---------------------------------------------- */
+
+
+/* --- Cadre boutons choix de jeu --- */
+
+.displayStartChoices {
+	width: 600px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+/* --- Bouton jeu contre ordinateur --- */
+
+.buttonVsComputer {
+	background-color: rgba(0, 0, 0, 0.8);
+	width:500px;
+	height:80px;
+	padding:5px;
+	border-style: solid;
+	border-color: #b42722;
+	border-width: 5px;
+	border-radius: 20px;
+	box-shadow: 8px 8px 5px rgba(0,0,0,.5);
+	margin:40px 20px 60px 20px;
+	font-family: Neucha;
+	color : #e4d9cb;
+	font-size: 1.5em;
+	animation-name: animChoice;
+  	animation-duration: 1.5s;
+}
+
+@keyframes animChoice {
+  from { transform : translate(-300px, 0px)}
+  to { transform : translate(0px, 0px)}
+}
+
+
+.buttonVsComputer:hover {
+	background-color: rgba(93, 9, 9, .9);
+}
+
+
+/* --- Bouton continuer --- */
+
+.buttonContinue {
+	background-color: rgba(0, 0, 0, 0.8);
+	width:300px;
+	height:60px;
+	padding:4px;
+	border-style: solid;
+	border-color: #b42722;
+	border-width: 4px;
+	border-radius: 15px;
+	box-shadow: 5px 5px 3px rgba(0,0,0,.5);
+	margin:20px 10px 30px 10px;
+	font-family: Neucha;
+	color : #e4d9cb;
+	font-size: 1.2em;
+}
+
+
+.buttonVsComputer:hover {
+	background-color: rgba(93, 9, 9, .9);
+}
+
+
+
+/* --- Cadre départ jeu : saisie mot à trouver --- */
+/* ---------------------------------------------- */
+
+.cadreSaisieTexte {
+	background-color: rgba(0, 0, 0, 0.6);
+	border-style: solid;
+	border-color: #b42722;
+	border-width: 1px;
+	border-radius: 20px;
+	width: 400px;
+	height:200px;
+	box-shadow: 8px 8px 5px rgba(0,0,0,.5);
+	padding: 20px;
+	margin:50px 20px 20px 20px;
+	font-family: Neucha;
+	font-size: 1.5em;
+	color : #e4d9cb;
+}
+
+
+
+/* --- Cadre jeu en cours : contenaire global --- */
+/* ---------------------------------------------- */
+
+.cadreJeu {
+	display:flex;
+	width: 80%;
+}
+
+
+/* --- Cadre jeu en cours : espace gauche --- */
+/* ---------------------------------------------- */
+.cadreJeuInfos {
+	display:flex;
+	flex-flow: column wrap;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-style: solid;
+	border-color: #b42722;
+	border-width: 1px;
+	border-radius: 20px;
+	width: 50%;
+	box-shadow: 8px 8px 5px rgba(0,0,0,.5);
+	padding: 20px;
+	margin:50px 20px 20px 20px;
+	font-family: Neucha;
+	font-size: 1.5em;
+	color : #e4d9cb;
+}
+
+
+.displayAlpha {
+	display : flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+
+.letLifes {
+	width:90%;
+	padding:50px 10px 10px 30px;
+}
+
+
+
+/* --- Cadre jeu en cours : espace droite --- */
+/* ---------------------------------------------- */
+.cadrePendu {
+	width: 393px;
+	height: 500px;
+	padding: 20px;
+	margin:50px 20px 20px 20px;
+	font-family: Neucha;
+	font-size: 1.5em;
+	position: relative;
+}
+
+
+
+/* =====================================================
+			Habillage boutons et input
+===================================================== */
+
+
+/* --- Input saisie mot à trouver --- */
+
+.formSaisie {
+	background-color: #616161;
+	width:300px;
+	padding:8px 40px 8px 8px;
+	border:none;
+	margin-top: 20px;
+}
+
+
+/* --- Bouton envoi mot --- */
+
+.buttonSend {
+	background-color: #8a1e1a;
+	width:200px;
+	padding:5px;
+	border:none;
+	margin: 20px 10px 10px;
+	font-family: AmaticSC;
+	color : #e4d9cb;
+	font-size: 1.1em;
+}
+
+/* --- Bouton change fond --- */
+
+.buttonBg {
+	background-color: #3d3e81;
+	width:150px;
+	padding:5px;
+	border:none;
+	margin: 20px 10px 10px;
+	font-family: AmaticSC;
+	color : #e4d9cb;
+	font-size: 1.1em;
+}
+
+
+/* =====================================================
+					Habillage général
+===================================================== */
+
+
+.spacer15 {
+	width:15%;
+}
+
+
+
+.center {
+	display : flex;
+	justify-content: center;
+}
+
+
+.spacerTop30 {
+	margin-top: 30px;
+}
+
+
+/* =====================================================
+		Habillage éléments interface
+===================================================== */
+
+
+.styleLifesText {
+	font-family: AmaticSC;
+	color : #888888;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.styleLifesNumber {
+	font-family: AmaticSC;
+	color : #782018;
+	font-size: 3em;
+	font-weight: bold;
+}
+
+
+/* --- Pirate lost --- */
+.pirateSkull {
+	width:5px; 
+	height:5px;
+	animation-name: skullLost;
+  	animation-duration: 3s;
+}
+
+@keyframes skullLost {
+  from { transform : scale(300, 300)}
+  to { transform : scale(1, 1)}
+}
+
+
+/* =====================================================
+	Affichage alphabet et mot à trouver
+===================================================== */
+
+
+.caseAlphabetEmpty {
+	background-color: rgb(170,170,170,.4);
+	width:30px;
+	padding:5px;
+	border-style: solid;
+	border-color: #888888;
+	border-width: 1px;
+	border-radius: 10px;
+	margin: 3px;
+	font-family: AmaticSC;
+	color : #888888;
+	font-size: 1.5em;
+}
+
+.caseAlphabetTryRed {
+	background-color: #373737;
+	width:30px;
+	padding:5px;
+	border-style: solid;
+	border-color: #888888;
+	border-width: 1px;
+	border-radius: 10px;
+	margin: 3px;
+	font-family: AmaticSC;
+	color : #782018;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.caseAlphabetTryGreen {
+	background-color: #373737;
+	width:30px;
+	padding:5px;
+	border-style: solid;
+	border-color: #888888;
+	border-width: 1px;
+	border-radius: 10px;
+	margin: 3px;
+	font-family: AmaticSC;
+	color : #2b7840;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+
+.caseTryEmpty {
+	background-color: #616161;
+	width:25px;
+	padding:3px;
+	border-style: solid;
+	border-color: #888888;
+	border-width: 1px;
+	border-radius: 10px;
+	margin: 3px;
+	font-family: AmaticSC;
+	color : #888888;
+	font-size: 1.5em;
+}
+
+.caseTryFind {
+	background-color: #30723b;
+	width:25px;
+	padding:3px;
+	border-style: solid;
+	border-color: #888888;
+	border-width: 1px;
+	border-radius: 10px;
+	margin: 3px;
+	font-family: AmaticSC;
+	color : #e4f6df;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+
+
+
+/* =====================================================
+		Eléments  et animations du pendu
+===================================================== */
+
+/* --- Potence bas --- */
+.pendu01 {
+	position:absolute; 
+	top:495px; 
+	left:0px;
+	animation-name: pendu01anim;
+  	animation-duration: 2s;
+}
+
+@keyframes pendu01anim {
+  from { transform : rotate(0deg);}
+  to { transform :rotate(360deg);}
+}
+
+
+/* --- Potence poteau --- */
+.pendu02 {
+	position:absolute; 
+	top:40px; 
+	left:0px;
+	animation-name: pendu02anim;
+  	animation-duration: 2s;
+}
+
+@keyframes pendu02anim {
+  from { top : -400px;}
+  to { top :40px;}
+}
+
+
+/* --- Potence haut --- */
+.pendu03 {
+	position:absolute; 
+	top:40px; 
+	left:0px;
+	animation-name: pendu03anim;
+  	animation-duration: 2s;
+}
+
+@keyframes pendu03anim {
+  from { transform : translateX(200px); }
+  to { transform : translateX(0px); }
+}
+
+/*@keyframes pendu03anim {
+  from { left : 300px;}
+  to { left :0px;}
+}
+*/
+
+/* --- Potence haut petite equerre --- */
+.pendu04 {
+	position:absolute; 
+	top:85px; 
+	left:139px;
+	animation-name: pendu04anim;
+  	animation-duration: 2s;
+}
+
+@keyframes pendu04anim {
+  from { left : 300px; top : -300px;}
+  to { left :139px; top : 85px;}
+}
+
+
+/* --- Potence corde --- */
+.pendu05 {
+	position:absolute; 
+	top:70px; 
+	left:236px;
+	animation-name: pendu05anim;
+  	animation-duration: 2s;
+}
+
+@keyframes pendu05anim {
+  from { transform : scale(3, 3)}
+  to { transform : scale(1, 1)}
+}
+
+/*@keyframes pendu05anim {
+  from { width :372px; height : 352px;}
+  to { width :93px; height : 88px;}
+}*/
+
+
+/* --- Pendu tete --- */
+.pendu06 {
+	position:absolute; 
+	top:152px; 
+	left:257px;
+	animation-name: pendu06anim;
+  	animation-duration: 6s;
+  	animation-iteration-count: infinite;
+  	animation-direction: alternate;
+}
+
+@keyframes pendu06anim {
+  0% { transform : rotate(0deg);}
+  20% { transform : rotate(70deg);}
+  40% { transform : rotate(0deg);}
+  60% { transform : rotate(270deg);}
+  80% { transform : rotate(360deg);}
+ 100% { transform : rotate(50deg);}
+}
+
+
+/* --- Pendu corps --- */
+.pendu07 {
+	position:absolute; 
+	top:225px; 
+	left:239px;
+	animation-name: pendu07anim;
+  	animation-duration: 2s;
+}
+
+
+@keyframes pendu07anim {
+  from { top : 500px;}
+  to { top :225px;}
+}
+
+
+/* --- Pendu bras gauche --- */
+.pendu08 {
+	position:absolute; 
+	top:244px; 
+	left:213px;
+	animation-name: pendu08anim;
+  	animation-duration: 2s;
+}
+
+
+@keyframes pendu08anim {
+  from { top : -400px; left :-300px; transform : rotate(0deg);}
+  to { top :244px; left :213px; transform : rotate(360deg);}
+}
+
+
+/* --- Pendu bras droit --- */
+.pendu09 {
+	position:absolute; 
+	top:252px; 
+	left:325px;
+	animation-name: pendu09anim;
+  	animation-duration: 2s;
+}
+
+
+@keyframes pendu09anim {
+  from { top : -300px; left :500px; transform : rotate(0deg);}
+  to { top :252px; left :325px; transform : rotate(360deg);}
+}
+
+
+/* --- Pendu jambe gauche --- */
+.pendu10 {
+	position:absolute; 
+	top:351px; 
+	left:242px;
+	animation-name: pendu10anim;
+  	animation-duration: 2s;
+}
+
+
+@keyframes pendu10anim {
+  from { top : 550px; left :-300px; transform : rotate(0deg);}
+  to { top :351px; left :242px; transform : rotate(360deg);}
+}
+
+
+/* --- Pendu jambe droite --- */
+.pendu11 {
+	position:absolute; 
+	top:364px; 
+	left:318px;
+
+	animation-name: pendu11anim;
+  	animation-duration: 2s;
+}
+
+
+@keyframes pendu11anim {
+  from { top : 450px; left :500px; transform : rotate(0deg);}
+  to { top :364px; left :318px; transform : rotate(360deg);}
+}
+
+
+/* ***************** THE END ************************* */

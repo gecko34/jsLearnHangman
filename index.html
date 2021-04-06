@@ -1,0 +1,125 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="exo-pendu.css">
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <title>Jeu du pendu</title>
+  </head>
+  <body>
+
+
+<div class="contenaireTitre">
+  <div class="spacer15"></div>
+	<div><h1>Le jeu du pendu</h1></div>
+  <div class="infosPlayers" id="displayPlayersScores">
+<!--     Infos joueurs -->
+  </div>
+</div>
+
+<div class="center">
+  <div id="infoJoueur" class="alertPlayer"></div>
+</div>
+
+<div class="contenaireGeneral">
+
+
+
+
+  <!-- ------------------------------------ -->
+  <!-- -------- Cadre choix de jeu ------- -->
+  <!-- ------------------------------------ -->
+
+  <div class="displayStartChoices" id="zoneGameChoices">
+    
+        <button type="button" id="buttonComputerGame" class="buttonVsComputer">Jouer contre l'ordinateur</button>
+
+        <button type="button" id="buttonPlayerGame" class="buttonVsComputer">Jouer contre un autre joueur</button>
+
+  </div>
+
+
+  <!-- ------------------------------------------------- -->
+  <!-- ----- Cadre saisie mot (player vs player) ------- -->
+  <!-- ------------------------------------------------- -->
+
+  <div class="cadreSaisieTexte" id="zoneStart">
+    
+        <label for="inputWordToFind"><span id="playerNameWord">Joueur 1</span><br/>Saisis ton mot à trouver</label>
+        <input id="inputWordToFind" type="text" name="wordToFind" placeholder="Ton mot" class="formSaisie">
+        <button type="button" id="buttonWordToFind" class="buttonSend">C'est parti !</button>
+
+  </div>
+
+
+  <!-- ------------------------------------------------- -->
+  <!-- ----- Cadre saisie noms (player vs player) ------- -->
+  <!-- ------------------------------------------------- -->
+
+  <div class="cadreSaisieTexte" id="zonePlayersNames">
+    <label for='inputPlayerOne'>Nom du Joueur 1</label>
+    <input id='inputPlayerOne' type='text' name='playerOne' placeholder='Joueur 1' class='formSaisie'>
+    <br/><br/><label for='inputPlayerTwo'>Nom du Joueur 2</label>
+    <input id='inputPlayerTwo' type='text' name='playerTwo' placeholder='Joueur 2' class='formSaisie'>
+    <button type='button' id='buttonPlayersNames' class='buttonSend'>Enregistrer</button>
+    <br/><br/>
+  </div>
+
+
+  <!-- ------------------------------------ -->
+  <!-- -------- Cadre jeu principal ------- -->
+  <!-- ------------------------------------ -->
+
+  <div class="cadreJeu" id="zoneGame">
+    
+    <div class="cadreJeuInfos" id="zoneGamePlay">
+      <div id="playerName">
+        Joueur 1
+      </div>
+
+      <div class="spacerTop30">
+        Mot à trouver
+      </div>
+
+      <div class="displayAlpha" id="wordLetters">
+      </div>
+
+      <div class="spacerTop30" id="displayTextLetters">
+        Lettres jouées
+      </div>
+
+      <div class="displayAlpha" id="alphabet">
+      </div>
+
+      <div class="letLifes" id="lifes">
+      </div>
+
+    </div>
+
+    <div class="cadrePendu" id="cadrePendu">
+    </div>
+
+
+  </div>
+
+
+
+</div>    <!-- Fin contenaire général -->
+
+<div class="center">
+  <button type="button" id="buttonRestart" class="buttonSend">Reset</button>
+  <button type="button" id="buttonBg1" class="buttonBg">Fond 1</button>
+  <button type="button" id="buttonBg2" class="buttonBg">Fond 2</button>
+  <button type="button" id="buttonBg3" class="buttonBg">Fond 3</button>
+</div>
+
+
+
+<script type="text/javascript" src="exo-pendu-3.js"></script>
+
+</body>
+</html>
